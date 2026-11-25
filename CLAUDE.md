@@ -15,6 +15,7 @@ Portfolio site for Susie (Yuyue Zhou), a pianist (B.M. Piano Performance, Manhat
 - **The Lost & Sound game source code is private.** Never add game.js or any game code to this repo or the site unless Susie says Marc has agreed to make it public.
 
 ## Files
+All site files live in `website/` (paths below are relative to it). CLAUDE.md, README.md and .gitignore stay at the repo root.
 - `index.html` — all pages. Views are `<main data-view="...">` sections routed by the URL hash: `#home`, `#scamp-pieces`, `#lost-and-sound`, `#flowing-light`, `#cv`.
 - `css/style.css` — all styles. Colors are CSS variables in `:root` (light + dark via `light-dark()`); pink accent `--pink: #ff5fa8`, plum `--plum`.
 - `js/main.js` — home covers (SVG drawn in code: SCAMP typing animation, Lost & Sound scene, Flowing Light ribbon), hash routing, the home-sound gain chart, score galleries + lightbox, video chapter buttons, Copy buttons.
@@ -37,6 +38,7 @@ Portfolio site for Susie (Yuyue Zhou), a pianist (B.M. Piano Performance, Manhat
 
 ## Preview locally
 ```
+cd website
 python3 -m http.server 8000
 ```
-then open http://localhost:8000. (Opening index.html directly also works.)
+then open http://localhost:8000. (Opening website/index.html directly also works.)
