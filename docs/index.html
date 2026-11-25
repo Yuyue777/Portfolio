@@ -26,10 +26,16 @@
 <!-- HOME -->
 <main data-view="home">
 <div class="home">
-  <a class="cover" id="cover" href="#scamp-pieces" aria-label="Open project">
-    <svg id="covsvg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Project cover"></svg>
-    <div class="cap" id="cap"></div>
-  </a>
+  <div class="covwrap">
+    <a class="cover" id="cover" href="#scamp-pieces" aria-label="Open project">
+      <svg id="covsvg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Project cover"></svg>
+      <div class="cap" id="cap"></div>
+    </a>
+    <div class="covnav">
+      <button class="nb" id="cvp" type="button" aria-label="Previous project">←</button>
+      <button class="nb" id="cvn" type="button" aria-label="Next project">→</button>
+    </div>
+  </div>
   <p class="intro">I am a pianist who builds sound with code.</p>
   <hr class="hline">
   <div>
@@ -48,7 +54,10 @@
   <a class="back" href="#home">← All projects</a>
   <h1>Lost &amp; Sound</h1>
   <p class="lede">An audio-only navigation game built with JavaScript, Web Audio and Resonance Audio. You wear headphones and close your eyes. 3D sound tells you where the ghost-story enemies are: they speed up and rise in pitch as they get closer. A layered “home” sound grows richer as you walk toward it.</p>
-  <p><span class="hp">Please use headphones</span></p>
+  <div class="play">
+    <a class="btn main big" href="https://yuyue777.github.io/SoundGame/" target="_blank" rel="noopener">▶ PLAY GAME</a>
+    <span class="hp">Please use headphones</span>
+  </div>
   <div class="media"><span style="color:var(--mut)">Demo video coming soon</span></div>
 
   <h2>Why I made it</h2>
@@ -74,7 +83,7 @@
       <p style="font-size:14px;color:var(--mut);margin:8px 0 0">Closeness goes from 0 (8 m or farther) to 1 (within 0.5 m of home). The main loop fades out while the low, middle and high pad layers come in, in that order.</p>
     </div>
       <h3>Hearing front and back</h3>
-      <p>My teacher wrote an air-absorption filter and a filter to reduce front/back confusion. I added them to the game and tuned the front/back values by ear.</p>
+      <p>My teacher, working with an AI assistant, wrote an air-absorption filter and a filter to reduce front/back confusion. I added them to the game and tuned the front/back values by ear.</p>
       <h3>The space</h3>
       <p>The game takes place in a large open space, 100 × 100 m and 3 m high. The walls are open and the floor and ceiling are grass, so there are almost no hard echoes.</p>
     </div>
@@ -87,10 +96,15 @@
     <thead><tr><th>Who</th><th>Work</th></tr></thead>
     <tbody>
       <tr><td>Me</td><td>Player movement and turning; synthesis experiments (two sawtooth oscillators, pulsing sound, FM voice, shaper); room sound and spatial settings; enemy voices and the speed-up with distance; the layered home voice, its distance range, fades and volume balance; added the air-absorption and front/back filters and tuned the front/back values; stop button; minimap setup; all game art; designed the enemy sounds.</td></tr>
-      <tr><td>Marc Evanstein (teacher)</td><td>Starting template; reorganized code into functions; timing fixes; audio graph diagrams; fixed the coordinate system (axes, left/right, turning); wrote the air-absorption and front/back filter functions; minimap widget; room size and materials; title, playing and win screens using my art.</td></tr>
-      <tr><td>AI</td><td>Only the project plan document (PLAN.md) was written with an AI assistant (Claude). All code was written by hand by me and Marc.</td></tr>
+      <tr><td>Marc Evanstein (teacher), with AI</td><td>Project plan (PLAN.md); starting template; reorganized code into functions; timing fixes; audio graph diagrams; fixed the coordinate system (axes, left/right, turning); the air-absorption and front/back filter functions; minimap widget; room size and materials; title, playing and win screens using my art.</td></tr>
     </tbody>
   </table>
+  </div>
+
+  <h2>How we used AI</h2>
+  <div class="tx">
+    <p>We both used an AI coding assistant (Claude), but in different ways. Marc worked with it to write the project plan and his parts of the code, like the filters. I used it as a tutor.</p>
+    <p>To set this up, we put a small file called <code>.role</code> in the project folder. It is not uploaded to GitHub, so each of us has our own copy. On Marc’s computer it says “teacher”, so the AI helps him build the framework and plan each step. On my computer it says “student”, so the AI does not write the code for me. It explains one idea at a time and helps me work through the plan step by step. This way I wrote my parts myself and can explain every line.</p>
   </div>
 
   <h2>Sound sources</h2>
@@ -540,7 +554,6 @@ score.show()
   </div>
 <footer>
   <span>Yuyue Zhou · susiezyy1127@gmail.com</span>
-  <span>Lost &amp; Sound made with Marc Evanstein. Game code is private.</span>
 </footer>
 </div>
 
