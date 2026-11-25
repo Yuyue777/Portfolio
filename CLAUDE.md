@@ -16,6 +16,7 @@ Portfolio site for Susie (Yuyue Zhou), a pianist (B.M. Piano Performance, Manhat
 
 ## Files
 All site files live in `docs/` (GitHub Pages serves from /docs) (paths below are relative to it). CLAUDE.md, README.md and .gitignore stay at the repo root.
+- `lost-and-sound/` (repo root) — git submodule of the game repo (github.com/Yuyue777/SoundGame). The site links to that repo's own GitHub Pages; the game is not served from `docs/`. It has its own CLAUDE.md/PLAN.md.
 - `index.html` — all pages. Views are `<main data-view="...">` sections routed by the URL hash: `#home`, `#scamp-pieces`, `#lost-and-sound`, `#flowing-light`, `#cv`.
 - `css/style.css` — all styles. Colors are CSS variables in `:root` (light + dark via `light-dark()`); pink accent `--pink: #ff5fa8`, plum `--plum`.
 - `js/main.js` — home covers (SVG drawn in code: SCAMP typing animation, Lost & Sound scene, Flowing Light ribbon), hash routing, the home-sound gain chart, score galleries + lightbox, video chapter buttons, Copy buttons.
