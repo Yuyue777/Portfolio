@@ -7,7 +7,7 @@ Plain HTML, CSS and JavaScript. No build step.
 ## Run it
 
 ```
-cd website
+cd docs
 python3 -m http.server 8000
 ```
 
@@ -15,7 +15,7 @@ Open http://localhost:8000
 
 ## Structure
 
-All site files are in `website/`.
+All site files are in `docs/`.
 
 ```
 index.html          pages (routed by #home, #scamp-pieces, #lost-and-sound, #flowing-light, #cv)
@@ -29,6 +29,5 @@ scamp/              SCAMP piece score pages
 ## Publish with GitHub Pages
 
 1. Create a GitHub repo and push this folder.
-2. Repo → Settings → Pages → Source: "GitHub Actions", and add a workflow that uploads the `website/` folder
-   (branch deploy only supports `/` or `/docs`, not `/website`).
+2. Repo → Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/docs`.
 3. The site appears at `https://<your-username>.github.io/<repo-name>/`.
