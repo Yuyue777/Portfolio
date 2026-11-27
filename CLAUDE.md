@@ -21,7 +21,7 @@ All site files live in `docs/` (GitHub Pages serves from /docs) (paths below are
 - `css/style.css` — all styles. Colors are CSS variables in `:root` (light + dark via `light-dark()`); pink accent `--pink: #ff5fa8`, plum `--plum`. Home/header/footer use `--p-ink #1d1a1f`, `--p-mut #6f6873`, `--p-rule #d9d4dc`.
 - `fonts/` — TeX Gyre Schola regular + italic (.otf, from GUST) for home titles. Body text on home is Inter.
 - `js/main.js` — hash routing, the home-sound gain chart (Lost & Sound page), score galleries + lightbox, video chapter buttons, Copy buttons.
-- Media: `flowing.mp4` + `poster.jpg` (Flowing Light), `scamp_performance.mp4` + `scamp_poster.jpg` (Susie playing the three SCAMP pieces; title cards cut out), `portrait.png` (CV photo).
+- Media: `flowing.mp4` + `poster.jpg` (Flowing Light), `scamp_performance.mp4` + `scamp_poster.jpg` (Susie playing the three SCAMP pieces; title cards cut out), `lostandsound.mp4` + `lostandsound_poster.jpg` (Lost & Sound demo, 1:15, stereo; poster = title screen), `portrait.png` (CV photo).
 - Scores as page images: `score/p1–p8.webp` (Flowing Light), `scamp/clown-1`, `qa-1..2`, `bunnies-1..3` `.webp`.
 
 ## Content facts
@@ -34,7 +34,7 @@ All site files live in `docs/` (GitHub Pages serves from /docs) (paths below are
 - SCAMP Process section (Nov 27, Susie's exact text): the `drop_down` code in a light-gray box, then two example calls with their notes as inline SVG staves (A: `drop_down(60, repeats=4, rise=2)` from Clown; B: `drop_down(62, repeats=2, rise=-7)` from Bellicose Bunnies). Code on the left and staff on the right; they stack on narrow screens. The staves are static, with no animation. The treble clef glyph comes from Noto Music (Google Fonts, subset to one glyph).
 
 ## Open items
-- Lost & Sound: headphone demo video (screen recording with stereo audio) + 1–2 screenshots; Freesound credits (title, author, link, license) — required for CC-BY; confirm the home sample's source.
+- Lost & Sound: maybe 1–2 screenshots; Freesound credits (title, author, link, license) — required for CC-BY; confirm the home sample's source.
 - Lost & Sound GitHub: repo is now Susie's (github.com/Yuyue777/SoundGame), live at https://yuyue777.github.io/SoundGame/, and the site has a PLAY GAME button. To do: README (what it is, how to play, who did what, how AI was used, Freesound credits), remove the debug status text, fix `positions = []` missing `let`, maybe a "View code on GitHub" link.
 - "Who did what" lists "shaper" for Susie (from Git history) but the final game.js has no shaper — ask her whether to keep it.
 - SCAMP: `docs/scamp/raw-notation.png` (the raw MuseScore screenshot) is missing. When it exists, put it after "The notation was messy at first:", at text width with a 1px border.
