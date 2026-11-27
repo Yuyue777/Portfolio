@@ -147,8 +147,12 @@ blockquote{margin:18px 0;padding-left:16px;border-left:3px solid var(--pink);fon
 .cv dt{color:var(--mut);white-space:nowrap}
 .cv dd{margin:0}
 .cv ul{margin:0;padding-left:1.1em}
-footer{border-top:1px solid var(--p-rule);margin-top:clamp(64px,8vw,104px);padding-top:20px;color:var(--p-mut);font:15px/1.6 var(--sans);display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
+footer{border-top:1px solid var(--p-rule);margin-top:clamp(64px,8vw,104px);padding-top:20px;color:var(--p-mut);font:15px/1.6 var(--sans);display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:center}
 footer .f-me{color:var(--p-ink);overflow-wrap:anywhere}
+/* On home the footer sits right under the program list's last rule, AI note left, contact right.
+   Other pages hide the note (its asterisks are only on home) and keep the centered contact line. */
+body:has(main.home:not([hidden])) footer{border-top:0;margin-top:0;justify-content:space-between}
+body:has(main.home[hidden]) footer .ai-note{display:none}
 [hidden]{display:none!important}
 @media(max-width:820px){.cols,.pieces{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.cvhead{grid-template-columns:minmax(0,1fr)}.cvhead img{width:160px}.cv dl{grid-template-columns:minmax(0,1fr)}.cv dt{margin-top:10px}.who td:first-child{white-space:normal}.who{font-size:14px}}
