@@ -18,8 +18,9 @@ Portfolio site for Susie (Yuyue Zhou), a pianist (B.M. Piano Performance, Manhat
 All site files live in `docs/` (GitHub Pages serves from /docs) (paths below are relative to it). CLAUDE.md, README.md and .gitignore stay at the repo root.
 - `lost-and-sound/` (repo root) — git submodule of the game repo (github.com/Yuyue777/SoundGame). The site links to that repo's own GitHub Pages; the game is not served from `docs/`. It has its own CLAUDE.md/PLAN.md.
 - `index.html` — all pages. Views are `<main data-view="...">` sections routed by the URL hash: `#home`, `#scamp-pieces`, `#lost-and-sound`, `#flowing-light`, `#cv`.
-- `css/style.css` — all styles. Colors are CSS variables in `:root` (light + dark via `light-dark()`); pink accent `--pink: #ff5fa8`, plum `--plum`.
-- `js/main.js` — home covers (SVG drawn in code: SCAMP typing animation, Lost & Sound scene, Flowing Light ribbon), hash routing, the home-sound gain chart, score galleries + lightbox, video chapter buttons, Copy buttons.
+- `css/style.css` — all styles. Colors are CSS variables in `:root` (light + dark via `light-dark()`); pink accent `--pink: #ff5fa8`, plum `--plum`. Home/header/footer use `--p-ink #1d1a1f`, `--p-mut #6f6873`, `--p-rule #d9d4dc`.
+- `fonts/` — TeX Gyre Schola regular + italic (.otf, from GUST) for home titles. Body text on home is Inter.
+- `js/main.js` — hash routing, the home-sound gain chart (Lost & Sound page), score galleries + lightbox, video chapter buttons, Copy buttons.
 - Media: `flowing.mp4` + `poster.jpg` (Flowing Light), `scamp_performance.mp4` + `scamp_poster.jpg` (Susie playing the three SCAMP pieces; title cards cut out), `portrait.png` (CV photo).
 - Scores as page images: `score/p1–p8.webp` (Flowing Light), `scamp/clown-1`, `qa-1..2`, `bunnies-1..3` `.webp`.
 
@@ -28,12 +29,16 @@ All site files live in `docs/` (GitHub Pages serves from /docs) (paths below are
 - SCAMP piece titles: **Clown**, **Q and A**, **Bellicose Bunnies**. Never use the old "Riverside Sketches" / river titles or any Guizhou framing.
 - Video chapters in `scamp_performance.mp4`: Clown 0:00, Q and A 0:38 (37.9 s), Bellicose Bunnies 1:25 (84.5 s).
 - Lost & Sound numbers on the site come from her game code: enemies react from 3 m to 0.5 m (playbackRate 1 + p, up to an octave); home reacts from 8 m; home gains: main 1.5·(1−p³), low 0.5·p, mid 0.35·p³, high 0.5·p⁷; enemy rings 3.5–5 / 6–7.5 / 8–9.5 / 10–11.5 m; home 13 m; win radius 0.5 m; walk speed 3 m/s; room 100 × 100 × 3 m, open walls, grass floor/ceiling.
-- Logo: pink pixel bunny (inline SVG in the header). Intro line uses the Fredoka font.
+- Logo: pink pixel bunny (inline SVG in the header).
+- Home design (Nov 2026): concert-program style. White, Schola titles, staff-line divider, "Program" list I–III with dotted leaders (2:31 / headphones / 3:45) and 16:9 thumbnails (SCAMP thumbnail = inline SVG staff of what `drop_down(60, repeats=4, rise=2)` plays + that code line; Lost & Sound thumbnail = inline SVG of the 4 home-gain curves). Pink only on the bunny, the last low note (B♭3) in the SCAMP staff, and the high-layer line in the Lost & Sound thumbnail.
+- SCAMP Process section (Nov 27, Susie's exact text): the `drop_down` code in a light-gray box, then two example calls with their notes as inline SVG staves (A: `drop_down(60, repeats=4, rise=2)` from Clown; B: `drop_down(62, repeats=2, rise=-7)` from Bellicose Bunnies). Code on the left and staff on the right; they stack on narrow screens. The staves are static, with no animation. The treble clef glyph comes from Noto Music (Google Fonts, subset to one glyph).
 
 ## Open items
 - Lost & Sound: headphone demo video (screen recording with stereo audio) + 1–2 screenshots; Freesound credits (title, author, link, license) — required for CC-BY; confirm the home sample's source.
 - Lost & Sound GitHub: repo is now Susie's (github.com/Yuyue777/SoundGame), live at https://yuyue777.github.io/SoundGame/, and the site has a PLAY GAME button. To do: README (what it is, how to play, who did what, how AI was used, Freesound credits), remove the debug status text, fix `positions = []` missing `let`, maybe a "View code on GitHub" link.
 - "Who did what" lists "shaper" for Susie (from Git history) but the final game.js has no shaper — ask her whether to keep it.
+- SCAMP: `docs/scamp/raw-notation.png` (the raw MuseScore screenshot) is missing. When it exists, put it after "The notation was messy at first:", at text width with a 1px border.
+- Lost & Sound AI wording: Susie wants "How I used AI" (Claude only as tutor/planner; all code hand-written by her and Marc) and a new AI table row, but Marc's Nov 25 commit says Marc worked with Claude on PLAN.md and his code (the filters). The site keeps Marc's version until Susie checks with Marc. Her new "Me" row text is ready too (drops FM voice and shaper, adds "in Reaper"), but it is not applied yet.
 - NYU forbids generative-AI output: leave Flowing Light out of the NYU portfolio, or disclose clearly.
 - Hosting: Georgia Tech needs a public link that stays live through March → GitHub Pages is the plan.
 
